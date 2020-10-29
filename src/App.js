@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
+import Login from "./Login";
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <PublicRoute restricted={false} component={Login} path="/" exact /> /
+          <PrivateRoute
+            restricted={true}
+            exact={true}
+            component={Dashboard}
+            path="/Dashboard"
+          />
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
+
+//restricted = false meaning public route
+//restricted = true meaning public route
+
+//Please login first after that dashboard component will appear then click logout button
+//then type http://localhost:3000/dashboard in browser url and  will see login component will appear instead of dashboard component
