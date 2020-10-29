@@ -25,7 +25,7 @@ const App = () => {
 export default App;
 
 //restricted = false meaning public route
-//restricted = true meaning public route
+//restricted = true meaning private route
 
 //Please login first after that dashboard component will appear then click logout button
 //then type http://localhost:3000/dashboard in browser url and  will see login component will appear instead of dashboard component
