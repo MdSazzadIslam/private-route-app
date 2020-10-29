@@ -29,3 +29,4 @@ export default App;
 
 //Please login first after that dashboard component will appear then click logout button
 //then type http://localhost:3000/dashboard in browser url and  will see login component will appear instead of dashboard component
+//Protected routes allow us to ensure only logged in users can access certain parts of our site
